@@ -24,7 +24,10 @@ app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/", function(req, res) {
+console.log("running");
+
+app.get("/.netlify/functions/server", function(req, res) {
+  console.log("get running");
   client.messages
     .create({
       from: `whatsapp:+14155238886`,
@@ -35,7 +38,8 @@ app.get("/", function(req, res) {
     .then(message => console.log(message.sid));
 });
 
-app.post("/", (req, res) => {
+app.post("/.netlify/functions/server", (req, res) => {
+  console.log("post running");
   const twiml = new MessagingResponse(),
     recipient = req.body.From,
     request = req.body.Body,
