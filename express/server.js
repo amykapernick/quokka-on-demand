@@ -7,6 +7,7 @@ const bodyParser = require("body-parser"),
   MessagingResponse = require("twilio").twiml.MessagingResponse;
 
 const router = express.Router();
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/", (req, res) => {
@@ -26,7 +27,7 @@ router.post("/", (req, res) => {
     message.body(`This is a quokka`);
     message.media("https://quokkas.amyskapers.tech/img/quokka.jpg");
   } else {
-    message.body(`This is not a quokka`);
+    message.body(req.body.Body);
     message.media("https://quokkas.amyskapers.tech/img/remi.jpg");
   }
 
