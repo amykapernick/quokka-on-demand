@@ -2,7 +2,7 @@
   "name": "quokka-on-demand",
   "version": "1.0.0",
   "description": "Here be Quokkas, on demand",
-  "main": "index.js",
+  "main": "functions/server.js",
   "scripts": {
     "build": "netlify-lambda build express",
     "start": "nodemon server-local.js"
