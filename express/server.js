@@ -8,20 +8,11 @@ const express = require("express"),
   bodyParser = require("body-parser"),
   accountSid = process.env.ACCOUNT_SID,
   authToken = process.env.AUTHTOKEN,
-  // client = require("twilio")(accountSid, authToken),
+  client = require("twilio")(accountSid, authToken),
   MessagingResponse = require("twilio").twiml.MessagingResponse;
 
 const router = express.Router();
 router.get("/", (req, res) => {
-  client.messages
-    .create({
-      from: `whatsapp:+14155238886`,
-      body: "This is not a quokka",
-      media: "https://quokkas.amyskapers.tech/img/remi.jpg",
-      to: `whatsapp:+61438984242`
-    })
-    .then(message => console.log(message.sid));
-
   res.writeHead(200, { "Content-Type": "text/html" });
   res.write("<h1>Welcome to Quokkas on Demand</h1>");
   res.write('<img src="/img/quokka.jpg"/>');
@@ -33,7 +24,13 @@ router.get("/", (req, res) => {
 app.use(bodyParser.json());
 app.use("/.netlify/functions/server", router); // path must route to lambda
 app.use("/", (req, res) => {
-  console.log("running here");
+  client.messages
+    .create({
+      from: `whatsapp:+14155238886`,
+      body: "This is not a quokka",
+      to: `whatsapp:+61438984242`
+    })
+    .then(message => console.log(message.sid));
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -44,7 +41,7 @@ router.get("/.netlify/functions/server", function(req, res) {
   console.log("get running");
 });
 
-router.post("/.netlify/functions/server", (req, res) => {
+app.post("/express/server.js", (req, res) => {
   console.log("post running");
   const twiml = new MessagingResponse(),
     recipient = req.body.From,

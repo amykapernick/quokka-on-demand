@@ -3,11 +3,21 @@ const http = require("http"),
   app = express(),
   accountSid = "ACc18864aeacea4b046986060cc2ea52d5",
   authToken = "004ab0f19562120bc01cd461f371aa7b",
-  client = require("twilio")(accountSid, authToken),
   MessagingResponse = require("twilio").twiml.MessagingResponse,
   bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// app.get("/", function(req, res) {
+//     res.send("Hello World!");
+//     client.messages
+//       .create({
+//         from: `whatsapp:+14155238886`,
+//         body: "This is not a quokka",
+//         to: `whatsapp:+61438984242`
+//       })
+//       .then(message => console.log(message.sid));
+//   });
 
 app.post("/", (req, res) => {
   const twiml = new MessagingResponse(),
