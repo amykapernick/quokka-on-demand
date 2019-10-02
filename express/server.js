@@ -20,7 +20,9 @@ router.get("/", (req, res) => {
 
 app.use(bodyParser.json());
 app.use("/.netlify/functions/server", router); // path must route to lambda
-app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
+app.use("/", (req, res) => {
+  console.log("running here");
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
