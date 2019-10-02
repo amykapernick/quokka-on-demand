@@ -12,6 +12,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.writeHead(200, { "Content-Type": "text/html" });
   res.write("<h1>Welcome to Quokkas on Demand</h1>");
+  res.write('<img src="/img/quokka.jpg"/>');
   res.end();
 });
 router.get("/another", (req, res) => res.json({ route: req.originalUrl }));
