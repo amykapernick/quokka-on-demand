@@ -7,6 +7,8 @@ const bodyParser = require("body-parser"),
   MessagingResponse = require("twilio").twiml.MessagingResponse;
 
 const router = express.Router();
+app.use(bodyParser.urlencoded({ extended: false }));
+
 router.get("/", (req, res) => {
   res.writeHead(200, { "Content-Type": "text/html" });
   res.write("<h1>Quokka on Demand!</h1>");
