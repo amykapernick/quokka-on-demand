@@ -1,15 +1,27 @@
 "use strict";
-const express = require("express");
-const path = require("path");
-const serverless = require("serverless-http");
-const app = express();
-const bodyParser = require("body-parser"),
+require("dotenv").config();
+
+const express = require("express"),
+  path = require("path"),
+  serverless = require("serverless-http"),
+  app = express(),
+  bodyParser = require("body-parser"),
   accountSid = process.env.ACCOUNT_SID,
   authToken = process.env.AUTHTOKEN,
+  // client = require("twilio")(accountSid, authToken),
   MessagingResponse = require("twilio").twiml.MessagingResponse;
 
 const router = express.Router();
 router.get("/", (req, res) => {
+  client.messages
+    .create({
+      from: `whatsapp:+14155238886`,
+      body: "This is not a quokka",
+      media: "https://quokkas.amyskapers.tech/img/remi.jpg",
+      to: `whatsapp:+61438984242`
+    })
+    .then(message => console.log(message.sid));
+
   res.writeHead(200, { "Content-Type": "text/html" });
   res.write("<h1>Welcome to Quokkas on Demand</h1>");
   res.write('<img src="/img/quokka.jpg"/>');
@@ -30,14 +42,6 @@ console.log("running");
 
 router.get("/.netlify/functions/server", function(req, res) {
   console.log("get running");
-  client.messages
-    .create({
-      from: `whatsapp:+14155238886`,
-      body: "This is not a quokka",
-      media: "https://quokkas.amyskapers.tech/img/remi.jpg",
-      to: `whatsapp:+61438984242`
-    })
-    .then(message => console.log(message.sid));
 });
 
 router.post("/.netlify/functions/server", (req, res) => {
