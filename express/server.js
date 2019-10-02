@@ -24,6 +24,17 @@ app.use("/", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get("/", function(req, res) {
+  client.messages
+    .create({
+      from: `whatsapp:+14155238886`,
+      body: "This is not a quokka",
+      media: "https://quokkas.amyskapers.tech/img/remi.jpg",
+      to: `whatsapp:+61438984242`
+    })
+    .then(message => console.log(message.sid));
+});
+
 app.post("/", (req, res) => {
   const twiml = new MessagingResponse(),
     recipient = req.body.From,
