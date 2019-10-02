@@ -17,14 +17,10 @@ app.post("/", (req, res) => {
 
   if (RegExp("quokka", "i").test(request)) {
     message.body(`This is a quokka`);
-    message.media(
-      "https://images.unsplash.com/photo-1513333420772-7b64ad15ca96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-    );
+    message.media("https://quokkas.amyskapers.tech/img/quokka.jpg");
   } else {
     message.body(`This is not a quokka`);
-    message.media(
-      "https://images.unsplash.com/photo-1510771463146-e89e6e86560e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80"
-    );
+    message.media("https://quokkas.amyskapers.tech/img/remi.jpg");
   }
 
   res.writeHead(200, { "Content-Type": "text/xml" });
