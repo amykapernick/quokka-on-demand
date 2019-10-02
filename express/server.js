@@ -35,7 +35,7 @@ app.use("/", (req, res) => {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-router.get("/.netlify/functions/server", function(req, res) {
+router.post("/.netlify/functions/server", function(req, res) {
   const twiml = new MessagingResponse(),
     recipient = req.body.From,
     request = req.body.Body,

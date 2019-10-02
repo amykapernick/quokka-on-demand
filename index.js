@@ -1,8 +1,6 @@
 const http = require("http"),
   express = require("express"),
   app = express(),
-  accountSid = "ACc18864aeacea4b046986060cc2ea52d5",
-  authToken = "004ab0f19562120bc01cd461f371aa7b",
   MessagingResponse = require("twilio").twiml.MessagingResponse,
   bodyParser = require("body-parser");
 
