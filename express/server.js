@@ -15,8 +15,8 @@ router.get("/", (req, res) => {
   res.write('<img src="/img/quokka.jpg"/>');
   res.end();
 });
-router.get("/another", (req, res) => res.json({ route: req.originalUrl }));
-router.post("/", (req, res) => res.json({ postBody: req.body }));
+// router.get("/another", (req, res) => res.json({ route: req.originalUrl }));
+// router.post("/", (req, res) => res.json({ postBody: req.body }));
 
 app.use(bodyParser.json());
 app.use("/.netlify/functions/server", router); // path must route to lambda
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 console.log("running");
 
-app.get("/.netlify/functions/server", function(req, res) {
+router.get("/.netlify/functions/server", function(req, res) {
   console.log("get running");
   client.messages
     .create({
@@ -38,7 +38,7 @@ app.get("/.netlify/functions/server", function(req, res) {
     .then(message => console.log(message.sid));
 });
 
-app.post("/.netlify/functions/server", (req, res) => {
+router.post("/.netlify/functions/server", (req, res) => {
   console.log("post running");
   const twiml = new MessagingResponse(),
     recipient = req.body.From,
