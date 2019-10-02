@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
     message.body(`This is a quokka`);
     message.media("https://quokkas.amyskapers.tech/img/quokka.jpg");
   } else {
-    message.body(req.body.Body);
+    message.body(`This is not a quokka`);
     message.media("https://quokkas.amyskapers.tech/img/remi.jpg");
   }
 
