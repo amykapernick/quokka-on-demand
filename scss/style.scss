@@ -1,0 +1,31 @@
+@import './variables.scss';
+
+object {
+	position: absolute;
+}
+
+body {
+	color: $neutral;
+	font-family: 'Quicksand', Arial, sans-serif;
+	max-width: 100vw;
+	overflow-x: hidden;
+	text-align: center;
+}
+
+p {
+	img {
+		margin: 0 0 0 10px;
+	}
+}
+
+.images {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+img {
+	border: 2px solid $blue;
+	max-height: 300px;
+	margin: 5px;
+}
