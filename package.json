@@ -1,35 +1,34 @@
 {
-  "name": "quokka-on-demand",
-  "version": "1.0.0",
-  "description": "Here be Quokkas, on demand",
-  "main": "functions/server.js",
-  "scripts": {
-    "build": "npm run build:gulp && netlify-lambda build express",
-    "start": "nodemon server-local.js",
-    "dev:gulp": "gulp watch",
-    "build:gulp": "gulp sassy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amykapernick/quokka-on-demand.git"
-  },
-  "author": "Amy Kapernick",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amykapernick/quokka-on-demand/issues"
-  },
-  "homepage": "https://github.com/amykapernick/quokka-on-demand#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "browser-sync": "^2.26.7",
-    "dotenv": "^8.1.0",
-    "express": "^4.17.1",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "netlify-lambda": "^1.6.3",
-    "nodemon": "^1.19.3",
-    "serverless-http": "^2.3.0",
-    "twilio": "^3.35.0"
-  }
+	"name": "quokka-on-demand",
+	"version": "1.0.0",
+	"description": "Here be Quokkas, on demand",
+	"main": "functions/server.js",
+	"scripts": {
+		"build": "npm run build:gulp && netlify-lambda build express",
+		"start": "nodemon server-local.js",
+		"dev:gulp": "gulp watch",
+		"build:gulp": "gulp sassy"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/amykapernick/quokka-on-demand.git"
+	},
+	"author": "Amy Kapernick",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/amykapernick/quokka-on-demand/issues"
+	},
+	"homepage": "https://github.com/amykapernick/quokka-on-demand#readme",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"browser-sync": "^2.26.7",
+		"dotenv": "^8.1.0",
+		"express": "^4.17.1",
+		"gulp": "^4.0.2",
+		"gulp-sass": "^4.0.2",
+		"netlify-lambda": "^1.6.3",
+		"nodemon": "^1.19.3",
+		"serverless-http": "^2.3.0",
+		"twilio": "^3.35.0"
+	}
 }
