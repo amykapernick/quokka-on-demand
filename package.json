@@ -4,7 +4,7 @@
 	"description": "Here be Quokkas, on demand",
 	"main": "functions/server.js",
 	"scripts": {
-		"build": "npm run build:gulp && netlify-lambda build express",
+		"build": "netlify-lambda build express",
 		"start": "nodemon server-local.js",
 		"dev:gulp": "gulp watch",
 		"build:gulp": "gulp sassy"
