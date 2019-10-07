@@ -5,17 +5,15 @@ object {
 }
 
 body {
-	color: $neutral;
+	color: #302e2c;
 	font-family: 'Quicksand', Arial, sans-serif;
 	max-width: 100vw;
 	overflow-x: hidden;
 	text-align: center;
 }
 
-p {
-	img {
-		margin: 0 0 0 10px;
-	}
+p img {
+	margin: 0 0 0 10px;
 }
 
 .images {
@@ -25,7 +23,7 @@ p {
 }
 
 img {
-	border: 2px solid $blue;
+	border: 2px solid #007cbb;
 	max-height: 300px;
 	margin: 5px;
 }
