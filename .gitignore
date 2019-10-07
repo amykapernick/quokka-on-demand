@@ -97,3 +97,5 @@ public
 
 # DynamoDB Local files
 .dynamodb/
+
+public/style.css
