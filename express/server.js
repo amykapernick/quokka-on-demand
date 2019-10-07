@@ -17,7 +17,7 @@ router.all('/', (req, res) => {
 	res.sendFile('/index.html')
 	res.end()
 })
-app.post('/', (req, res) => {
+router.post('/', (req, res) => {
 	const twiml = new MessagingResponse(),
 		recipient = req.body.From,
 		request = req.body.Body,
