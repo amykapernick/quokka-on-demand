@@ -1,6 +1,11 @@
-const express = require('express')
-const app = express()
-const bodyParser = require('body-parser'),
+require('dotenv').config()
+
+const express = require('express'),
+	app = express(),
+	bodyParser = require('body-parser'),
+	accountSid = process.env.ACCOUNT_SID,
+	authToken = process.env.AUTHTOKEN,
+	client = require('twilio')(accountSid, authToken),
 	MessagingResponse = require('twilio').twiml.MessagingResponse
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -19,10 +24,10 @@ app.post('/', (req, res) => {
 
 	if (RegExp('quokka', 'i').test(request)) {
 		message.body(`This is a quokka`)
-		message.media('https://quokkas.amyskapers.tech/img/quokka.jpg')
+		message.media('https://quokkas.amyskapers.tech/img/quokka_(1).jpg')
 	} else {
 		message.body(`This is not a quokka`)
-		message.media('https://quokkas.amyskapers.tech/img/remi.jpg')
+		message.media('https://quokkas.amyskapers.tech/img/not_quokka_(1).jpg')
 	}
 
 	res.writeHead(200, { 'Content-Type': 'text/xml' })
