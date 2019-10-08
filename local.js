@@ -18,16 +18,19 @@ app.post('/', (req, res) => {
 	const twiml = new MessagingResponse(),
 		recipient = req.body.From,
 		request = req.body.Body,
-		message = twiml.message()
-
-	console.log(request)
+		message = twiml.message(),
+		photo = Math.floor(Math.random() * 12)
+	let type = 'jpg'
 
 	if (RegExp('quokka', 'i').test(request)) {
 		message.body(`This is a quokka`)
-		message.media('https://quokkas.amyskapers.tech/img/quokka_(1).jpg')
+		message.media(`https://quokkas.amyskapers.tech/img/quokka_(${photo}).${type}`)
 	} else {
+		if (photo > 9) {
+			type = 'gif'
+		}
 		message.body(`This is not a quokka`)
-		message.media('https://quokkas.amyskapers.tech/img/not_quokka_(1).jpg')
+		message.media(`https://quokkas.amyskapers.tech/img/not_quokka_(${photo}).${type}`)
 	}
 
 	res.writeHead(200, { 'Content-Type': 'text/xml' })
