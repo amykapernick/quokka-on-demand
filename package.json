@@ -1,29 +1,28 @@
 {
-  "name": "quokka-on-demand",
-  "version": "1.0.0",
-  "description": "Here be Quokkas, on demand",
-  "main": "functions/server.js",
-  "scripts": {
-    "build": "netlify-lambda build express",
-    "start": "nodemon server-local.js",
-    "dev:gulp": "gulp watch",
-    "build:gulp": "gulp sassy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amykapernick/quokka-on-demand.git"
-  },
-  "author": "Amy Kapernick",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amykapernick/quokka-on-demand/issues"
-  },
-  "homepage": "https://github.com/amykapernick/quokka-on-demand#readme",
-  "devDependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "netlify-lambda": "^1.6.3",
-    "nodemon": "^1.19.2",
-    "serverless-http": "^2.3.0"
-  }
+	"name": "quokka-on-demand",
+	"version": "1.0.0",
+	"description": "Here be Quokkas, on demand",
+	"main": "functions/server.js",
+	"scripts": {
+		"build": "netlify-lambda build express",
+		"start": "nodemon server-local.js",
+		"dev": "node local.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/amykapernick/quokka-on-demand.git"
+	},
+	"author": "Amy Kapernick",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/amykapernick/quokka-on-demand/issues"
+	},
+	"homepage": "https://github.com/amykapernick/quokka-on-demand#readme",
+	"devDependencies": {
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1"
+	},
+	"dependencies": {
+		"twilio": "^3.35.1"
+	}
 }
