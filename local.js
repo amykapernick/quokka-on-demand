@@ -5,7 +5,6 @@ const express = require('express'),
 	bodyParser = require('body-parser'),
 	accountSid = process.env.ACCOUNT_SID,
 	authToken = process.env.AUTHTOKEN,
-	client = require('twilio')(accountSid, authToken),
 	MessagingResponse = require('twilio').twiml.MessagingResponse
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -16,7 +15,6 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
 	const twiml = new MessagingResponse(),
-		recipient = req.body.From,
 		request = req.body.Body,
 		message = twiml.message()
 	let photo = Math.floor(Math.random() * 12),
