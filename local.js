@@ -11,21 +11,22 @@ const express = require('express'),
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/', (req, res) => {
-	res.send('Hello World!')
+	res.send('Hello Superclass 👋👋')
 
 	client.messages
-      .create({
-         from: 'whatsapp:+14155238886',
-         body: 'Hello there!',
-         to: 'whatsapp:+61438984242'
-       })
-      .then(message => console.log(message.sid));
+		.create({
+			from: 'whatsapp:+14155238886',
+			body: "Hi, I'm at superclass",
+			to: 'whatsapp:+61438984242',
+		})
+		.then(message => console.log(message.sid))
 })
 
 app.post('/', (req, res) => {
 	const twiml = new MessagingResponse(),
 		request = req.body.Body,
 		message = twiml.message()
+
 	let photo = Math.floor(Math.random() * 12),
 		type = 'jpg'
 

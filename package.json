@@ -4,9 +4,7 @@
 	"description": "Here be Quokkas, on demand",
 	"main": "functions/server.js",
 	"scripts": {
-		"build": "netlify-lambda build express",
-		"start": "nodemon server-local.js",
-		"dev": "node local.js"
+		"start": "node local.js"
 	},
 	"repository": {
 		"type": "git",
