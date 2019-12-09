@@ -33,3 +33,23 @@ img {
 	grid-template-rows: auto auto;
 	justify-items: center;
 }
+
+.quokka-or-not figure {
+  position: relative;
+}
+
+.quokka-or-not figure figcaption {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+	color: white;
+	font-size: 32px;
+	text-shadow: #000 1px 0 10px;
+}
+
+.quokka-or-not figure figcaption small {
+	display: block;
+	font-size: 18px;
+}
