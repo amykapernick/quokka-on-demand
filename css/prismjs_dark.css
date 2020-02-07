@@ -1,0 +1,200 @@
+pre {
+	background: #191919;
+	border: 2px solid #191919;
+	border-radius: 0.3em;
+	margin: 0.5em 0;
+	padding: 1em 2em;
+	position: relative;
+	overflow: auto;
+  }
+  code[data-language='bash'] {
+	padding: 0.5em 1em;
+  }
+  code[data-language]:before {
+	background: #007cbb;
+	color: #fff;
+	border-radius: 0 0 10px 10px;
+	padding: 5px 10px;
+	position: absolute;
+	top: 0;
+	right: 20px;
+  }
+  code[data-language='text'] {
+	background: #edf3f7;
+	color: #191919;
+  }
+  code[data-language='text'] pre,
+  code[data-language='text'] code {
+	color: inherit;
+  }
+  code[data-language='html']:before {
+	content: 'HTML';
+  }
+  code[data-language='css']:before {
+	content: 'CSS';
+  }
+  code[data-language='scss']:before {
+	content: 'SCSS';
+  }
+  code[data-language='javascript']:before {
+	content: 'JS';
+  }
+  
+  pre,
+  code {
+	color: #00acbb;
+	font-size: 0.9em;
+	font-family: 'Source Code Pro', 'Anonymous Pro', monospace;
+	text-align: left;
+	line-height: 1.5;
+	tab-size: 4;
+	hyphens: none;
+  }
+  pre.line-numbers,
+  code.line-numbers {
+	padding: 0;
+	padding-left: 2.8em;
+	overflow: initial;
+  }
+  pre::selection, pre::mozselection,
+  code::selection,
+  code::mozselection {
+	background: #6ca7d8;
+  }
+  pre > code[class*='language-'],
+  code > code[class*='language-'] {
+	position: relative;
+	z-index: 1;
+  }
+  
+  :not(pre) > code {
+	background: #80d6dd;
+	border-radius: 0.3em;
+	color: #191919;
+	font-size: 0.8em;
+	padding: 0.1em 0.3em;
+  }
+  
+  pre[data-line] {
+	position: relative;
+  }
+  pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+  }
+  pre.line-numbers > code {
+	position: relative;
+  }
+  
+  .line-numbers {
+	padding-left: 2.8em;
+  }
+  .line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em;
+	/* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  .line-numbers .line-numbers-rows > span {
+	pointer-events: none;
+	display: block;
+	counter-increment: linenumber;
+  }
+  .line-numbers .line-numbers-rows > span:before {
+	content: counter(linenumber);
+	color: #999;
+	display: block;
+	padding-right: 0.8em;
+	text-align: right;
+  }
+  
+  .line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: 1em;
+	background: #edf3f7;
+	box-shadow: inset 5px 0 0 #1c75bc;
+	z-index: 0;
+	pointer-events: none;
+	line-height: inherit;
+	white-space: pre;
+  }
+  
+  .namespace {
+	opacity: 0.7;
+  }
+  
+  .token.comment, .token.prolog, .token.doctype, .token.cdata {
+	color: #93a1a1;
+  }
+  .token.punctuation {
+	color: #999999;
+  }
+  .token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted {
+	color: #990055;
+  }
+  .token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+	color: #669900;
+  }
+  .token.operator, .token.entity, .token.url {
+	color: #a67f59;
+  }
+  .token.atrule, .token.attr-value, .token.keyword {
+	color: #1c75bc;
+  }
+  .token.function {
+	color: #dd4a68;
+  }
+  .token.regex, .token.important, .token.variable {
+	color: #ee9900;
+  }
+  .token.entity {
+	cursor: help;
+  }
+  
+  .language-css.string,
+  .style.string {
+	color: #a67f59;
+  }
+  
+  .command-line-prompt {
+	border-right: 1px solid #999;
+	display: block;
+	float: left;
+	font-size: 100%;
+	letter-spacing: -1px;
+	margin-right: 1em;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  .command-line-prompt > span:before {
+	color: #999;
+	content: ' ';
+	display: block;
+	padding-right: 0.8em;
+  }
+  .command-line-prompt > span[data-user]:before {
+	content: "[" attr(data-user) "@" attr(data-host) "] $";
+  }
+  .command-line-prompt > span[data-user='root']:before {
+	content: "[" attr(data-user) "@" attr(data-host) "] #";
+  }
+  .command-line-prompt > span[data-prompt]:before {
+	content: attr(data-prompt);
+  }
+  

@@ -1,0 +1,70 @@
+@font-face {
+	font-family: 'Recursive';
+	src: url('../fonts/recursive-MONO_CASL_wght_slnt_ital--full_gsub--2019_12_21-21_07.ttf') format('truetype');
+}
+
+object {
+	position: absolute;
+}
+
+body {
+	--background: #fffffe;
+	--headline: #094067;
+	--body: #5f6c7b;
+	--highlight: #3da9fc;
+	--secondary: #90b4ce;
+	--tertiary: #ef4565;
+
+	color: var(--body);
+	font-family: 'Recursive', Arial, sans-serif;
+	max-width: 100vw;
+	overflow-x: hidden;
+	text-align: center;
+}
+
+h1, h2, h3, h4, .subtitle {
+	color: var(--headline);
+}
+
+p img {
+	margin: 0 0 0 10px;
+}
+
+.images {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 10px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.images li {
+	margin: 0;
+	padding: 0;
+}
+
+.images img {
+	width: 100%;
+	height: auto;
+}
+
+img {
+	border: 2px solid var(--highlight);
+	display: block;
+	max-height: 300px;
+	margin: 5px;
+}
+
+.details {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto;
+	justify-items: center;
+}
+
+.subtitle {
+	font-size: 1.1em;
+	margin-top: 0;
+}
